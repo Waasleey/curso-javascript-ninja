@@ -67,25 +67,37 @@ pessoa.parar = function(){
 Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
-?
+pessoa.nomecompleto = function(){
+
+  return pessoa.nome + " " + pessoa.sobrenome;
+ }
 
 /*
 Crie um método chamado `mostrarIdade`, que retorne a frase:
 - "Olá, eu tenho [IDADE] anos!"
 */
-?
+pessoa.mostraridade = function(){
+
+  return "Olá, eu tenho " + pessoa.idade + " anos"
+}
 
 /*
 Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
-?
+pessoa.mostrapeso = function(){
+
+  return "Eu peso " + pessoa.peso + "Kg"
+}
 
 /*
 Crie um método chamado `mostrarAltura` que retorne a frase:
 - "Minha altura é [ALTURA]m."
 */
-?
+pessoa.mostraraltura = function(){
+
+  return "Minha altura é " + pessoa.altura + "m"
+}
 
 /*
 Agora vamos brincar um pouco com o objeto criado:
