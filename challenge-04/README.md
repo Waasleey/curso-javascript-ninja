@@ -29,35 +29,59 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `assentos` - Number - cinco por padrão
 - `quantidadePessoas` - Number - zero por padrão
 */
-?
+var carro = {
+
+  marca: "Celta",
+  modelo: "naipe",
+  placa: "ABC-1111",
+  ano: 2001,
+  cor: "azul",
+  qportas: 4,
+  assentos: 5,
+  qpessoas: 0
+}
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-?
+carro.mudarcor = function(cor){
 
+  return carro.cor = cor
+}
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
-?
+carro.obtercor = function(){
+
+  return carro.cor;
+}
 
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
-?
+carro.obtermodelo = function(){
+
+  return carro.modelo;
+}
 
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
-?
+carro.obtermarca = function(){
+
+  return carro.marca
+}
 
 /*
 Crie um método chamado `obterMarcaModelo`, que retorne:
 "Esse carro é um [MARCA] [MODELO]"
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
-?
+carro.obtermarcamodelo = function(){
+
+  return "Esse carro é um " + carro.obtermarca + "" + carro.obtermodelo;
+}
 
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
@@ -75,7 +99,24 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-?
+carro.passageiros = function(pessoas){
+  
+  var qsobrando = 0;
+  
+  if(pessoas >= carro.assentos){
+    return "O carro já está lotado";
+  }
+  else if(pessoas <= carro.assentos){
+    if(pessoas === 5){
+      return "Já temos " + pessoas + " passageiros no carro"
+    }
+    else{
+      qsobrando = carro.assentos - pessoas;
+      
+      return "Só cabem mais " + qsobrando + " pessoas"
+    }
+  }
+}
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -85,31 +126,31 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-?
+carro.cor() // azul
 
 // Mude a cor do carro para vermelho.
-?
+carro.mudarcor("vermelho")
 
 // E agora, qual a cor do carro?
-?
+carro.cor() // vermelho
 
 // Mude a cor do carro para verde musgo.
-?
+carro.mudarcor("musgo") 
 
 // E agora, qual a cor do carro?
-?
+carro.cor() // musgo
 
 // Qual a marca e modelo do carro?
-?
+carro.marca + carro.modelo // Celta naipe
 
 // Adicione 2 pessoas no carro.
-?
+carro.passageiros(2) // "Só cabem mais 3 pessoas"
 
 // Adicione mais 4 pessoas no carro.
-?
+carro.passageiros(4) // "O carro está lotado"
 
 // Faça o carro encher.
-?
+carro.passageiros(5) 
 
 // Tire 4 pessoas do carro.
 ?
